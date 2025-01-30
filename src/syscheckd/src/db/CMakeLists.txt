@@ -23,7 +23,8 @@ file(GLOB DB_SRC
      ${CMAKE_SOURCE_DIR}/src/db/src/fimDB.cpp
      ${CMAKE_SOURCE_DIR}/src/db/src/dbFileItem.cpp
      ${CMAKE_SOURCE_DIR}/src/db/src/dbRegistryKey.cpp
-     ${CMAKE_SOURCE_DIR}/src/db/src/dbRegistryValue.cpp)
+     ${CMAKE_SOURCE_DIR}/src/db/src/dbRegistryValue.cpp
+     ${CMAKE_SOURCE_DIR}/src/db/src/ebpf_whodata.cpp)
 
 if(CMAKE_SYSTEM_NAME STREQUAL "SunOS")
   add_definitions(-DSOLARIS=ON)

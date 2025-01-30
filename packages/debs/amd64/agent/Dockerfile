@@ -40,5 +40,7 @@ RUN chmod +x /usr/local/bin/build_package
 ADD helper_function.sh /usr/local/bin/helper_function.sh
 ADD gen_permissions.sh /tmp/gen_permissions.sh
 
+RUN apt-get install -y --force-yes libtbb-dev pkg-config libc-ares-dev libcurl4-openssl-dev libssl-dev libjsoncpp-dev libprotobuf-dev coreutils util-linux systemd libgtest-dev uthash-dev protobuf-compiler libprotobuf-dev libjsoncpp-dev libtbb-dev libc-ares-dev openssl libssl-dev curl curl libcurl4-openssl-dev gpr gprbuild libjsoncpp-dev binutils-dev clang libelf-dev dwarves automake llvm libtool
+
 # Set the entrypoint
 ENTRYPOINT ["/usr/local/bin/build_package"]

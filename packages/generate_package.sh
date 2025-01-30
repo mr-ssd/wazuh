@@ -88,6 +88,7 @@ build_pkg() {
 
     # Build the Debian package with a Docker container
     docker run -t --rm -v ${OUTDIR}:/var/local/wazuh:Z \
+        --privileged \
         -e SYSTEM="$SYSTEM" \
         -e BUILD_TARGET="${TARGET}" \
         -e ARCHITECTURE_TARGET="${ARCHITECTURE}" \
@@ -95,6 +96,7 @@ build_pkg() {
         -e IS_STAGE="${IS_STAGE}" \
         -e WAZUH_BRANCH="${BRANCH}" \
         -e WAZUH_VERBOSE="${VERBOSE}" \
+        -v /lib/modules:/lib/modules \
         ${CUSTOM_CODE_VOL} \
         ${CONTAINER_NAME}:${DOCKER_TAG} \
         ${REVISION} ${JOBS} ${DEBUG} \
